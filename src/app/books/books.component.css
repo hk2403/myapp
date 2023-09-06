@@ -155,6 +155,12 @@ p{
     width: 100%;
     height: 340px;
   }
+  h4{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 90%;
+  }
 
 
 }
