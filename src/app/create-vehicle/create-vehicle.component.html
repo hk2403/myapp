@@ -1,0 +1,31 @@
+<section>
+    <form [formGroup]="vehicleForm">
+        <div class="mb-3 mt-3">
+            <label for="vehicle" class="form-label">Vehicle:</label>
+            <input type="text" class="form-control" id="vehicle" placeholder="Enter Vehicle Name" formControlName="Vehicle">
+        </div>
+        <div class="mb-3 mt-3">
+            <label class="form-label">Manufacturer:</label>
+            <input type="text" class="form-control" id="manu" placeholder="Enter Manufacturer Name" formControlName="manufacturer">
+        </div>
+        <div class="mb-3 mt-3">
+            <label class="form-label">Model:</label>
+            <input type="text" class="form-control" id="model" placeholder="Enter Model Name" formControlName="model">
+        </div>
+        <div class="mb-3 mt-3">
+            <label class="form-label">Type:</label>
+            <input type="text" class="form-control" id="type" placeholder="Enter Type" formControlName="type">
+        </div>
+        <div class="mb-3 mt-3">
+            <label class="form-label">Fuel:</label>
+            <input type="text" class="form-control" id="fuel" placeholder="Enter Fuel Type" formControlName="fuel">
+        </div>
+        <div class="mb-3 mt-3">
+            <label class="form-label">Color:</label>
+            <input type="text" class="form-control" id="col" placeholder="Enter Color" formControlName="color">
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
+        </div>
+    </form>
+</section>

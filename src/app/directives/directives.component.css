@@ -1,0 +1,14 @@
+.child{
+    background-color: blue ;
+    color: white;
+}
+
+.teen{
+    background-color: red;
+    color: yellow ;
+}
+
+.young{
+    background-color: green;
+    color: rgb(20, 4, 32) ;
+}

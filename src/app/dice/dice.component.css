@@ -1,0 +1,24 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+div{
+    width: 50%;
+    height: 60%;
+    border: 2px solid rgb(0, 166, 255);
+    text-align: center;
+    padding: 20px;
+    background-color: #F7F7F7;
+    border-radius: 20px;
+}
+
+button{
+    width: 70%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: green;
+    color: yellow;
+}

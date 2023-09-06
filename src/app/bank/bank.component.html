@@ -1,0 +1,68 @@
+<section>
+    <div>
+        <label>Search Here: </label><input type="text" [(ngModel)]="term" (keypress)="getFilteredAccounts()">
+    </div>
+
+    <div>
+        <label for="">Column</label>
+        <select name="" id="" [(ngModel)]="column">
+            <option>Account_Number</option>
+            <option>City</option>
+        </select>
+        <select name="" id="" [(ngModel)]="order">
+            <option>asc</option>
+            <option>desc</option>
+        </select>
+        <button (click)="getSortedAccounts()" class="sortCl">sort</button>
+    </div>
+
+    <div>
+        <label>Limit:</label>
+        <select [(ngModel)]="limit">
+            <option>3</option>
+            <option>5</option>
+            <option>10</option>
+            <option>15</option>
+
+        </select>
+        <label>Page:</label>
+        <select [(ngModel)]="page">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+
+        </select>
+
+        <button (click)="getPagedAccounts()" class="btn btn-primary">Proceed</button>
+    </div>
+
+</section>
+
+<table class="table table-dark  table-bordered">
+    <thead>
+        <tr>
+            <th>Account_Name</th>
+            <th>Available_Balance</th>
+            <th>Account_Number</th>
+            <th>City</th>
+            <th>Profie_Picture</th>
+            <th>Id</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let account of accounts">
+            <td>{{account.account_name}}</td>
+            <td>{{account.available_balance}}</td>
+            <td>{{account.account_number}}</td>
+            <td>{{account.city}}</td>
+            <td>
+                <img src="{{account.profie_picture}}" alt="">
+            </td>
+            <td>{{account.id}}</td>
+
+
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,20 @@
+<h1 appImp>Calculator</h1>
+
+<label for="">Number 1:</label>
+<input type="number" [(ngModel)]="n1">
+
+<br>
+
+<label for="">Number 2:</label>
+<input type="number" [(ngModel)]="n2">
+
+<br>
+
+<button (click)="sum()">sum</button>
+<button (click)="mul()">mul</button>
+
+<br>
+
+<h2>Result is {{result}}</h2>
+
+

@@ -1,0 +1,12 @@
+.popup{
+    position: fixed;
+    top: 100px;
+    bottom: 100px;
+    right: 100px;
+    border: 2px solid orange;
+    width: max(1200px,60%);
+    
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}

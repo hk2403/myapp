@@ -1,0 +1,15 @@
+<section>
+    <div>
+        <label for="marks">Marks:</label>
+        <input [(ngModel)]="marks" type="number" placeholder="Enter Marks" id="marks">
+        <br>
+        <br>
+       
+        <h1 *ngIf="marks>=80&&marks<=100">Grade is A</h1>
+        <h1 *ngIf="marks>=60&&marks<80">Grade is B</h1>
+        <h1 *ngIf="marks>=50&&marks<60">Grade is C</h1>
+        <h1 *ngIf="marks>=35&&marks<50">Grade is D</h1>
+        <h1 *ngIf="marks>=0&&marks<35">Grade is Fail</h1>
+        <h1 *ngIf="marks<0 || marks>100">Please enter correct marks</h1>
+    </div>
+</section>

@@ -1,0 +1,37 @@
+.parent{
+    width:100vw;
+    height: 100vh;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.child{
+    width: 400px;
+    
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 30px;
+    margin:0 auto;
+    padding: 30px;
+    
+}
+.child>div{
+    text-align: center;
+    width: 100%;
+   
+}
+button{
+    border: 1px solid rgb(186, 175, 175);
+    padding: 8px;
+    background-color: black;
+    color:  orange;
+    width: 150px;
+}
+label{
+    font-weight: 700;
+    
+}

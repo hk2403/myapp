@@ -1,0 +1,12 @@
+section{
+    display: flex;
+    justify-content:space-around;
+}
+label,input,select{
+    height: 30px;
+}
+.sortCl{
+    width: 80px;
+    height: 30px;
+    
+}

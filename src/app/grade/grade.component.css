@@ -1,0 +1,22 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+div{
+    width: 50%;
+    
+    border: 1px solid rgb(0, 166, 255);
+    text-align: center;
+    padding: 20px;
+}
+
+button{
+    width: 70%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: green;
+    color: yellow;
+}
