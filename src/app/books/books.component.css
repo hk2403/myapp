@@ -65,7 +65,7 @@ p{
 
 .cardd {
   width: 45%;
-  height: 590px;
+  height: 550px;
   background-color: white;
   border-radius: 5px;
   text-align: center;
@@ -143,7 +143,7 @@ p{
 
   .cardd {
     width: 95%;
-    height: 540px;
+    height: 550px;
     background-color: white;
     border-radius: 5px;
     text-align: center;
@@ -159,7 +159,7 @@ p{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: 90%;
+    width: 80%;
   }
 
 
