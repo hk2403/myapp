@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,12 +14,13 @@ export class LoginComponent {
     password: new FormControl()
   });
 
-  constructor(private _loginService:LoginService){}
+  constructor(private _loginService:LoginService, private _router:Router){}
   login(){
     this._loginService.doLogin(this.loginForm.value).subscribe(
       (data:any)=>{
         alert("Login Success");
-        
+        this._router.navigateByUrl("/dashboard");
+        localStorage.setItem('token',data.token);
       },
       (err:any)=>{
         alert("Login Failed");
