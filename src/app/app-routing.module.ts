@@ -17,10 +17,11 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
 import { BooksComponent } from './books/books.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { CreateBankComponent } from './create-bank/create-bank.component';
+import { authenticationGuard } from './authentication.guard';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
-  {path:'dashboard', component:DashboardComponent, children:[
+  {path:'dashboard', component:DashboardComponent, canActivate:[authenticationGuard], children:[
     {path:'home', component:HomeComponent},
     {path:'about',component:AboutComponent},
     {path:'data-binding', component:DataBindingComponent},
