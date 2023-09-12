@@ -19,6 +19,7 @@ import { CreateVehicleComponent } from './create-vehicle/create-vehicle.componen
 import { CreateBankComponent } from './create-bank/create-bank.component';
 import { authenticationGuard } from './authentication.guard';
 import { notifyGuard } from './notify.guard';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -34,7 +35,8 @@ const routes: Routes = [
     {path:'bank', component:BankComponent},
     {path:'createBank', component:CreateBankComponent, canDeactivate:[notifyGuard]},
     {path:'vehicles', component:VehiclesComponent},
-    {path:'createVehicle',component:CreateVehicleComponent, canDeactivate:[notifyGuard]}
+    {path:'createVehicle',component:CreateVehicleComponent, canDeactivate:[notifyGuard]},
+    {path:'vehicleDetails/:id', component:VehicleDetailsComponent}
   ]},
   {path:'',component:LoginComponent},
   {path:'test',component:TestComponent},

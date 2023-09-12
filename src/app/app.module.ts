@@ -27,6 +27,7 @@ import { BooksComponent } from './books/books.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { CreateBankComponent } from './create-bank/create-bank.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { CreateBankComponent } from './create-bank/create-bank.component';
     BooksComponent,
     CreateVehicleComponent,
     CreateBookComponent,
-    CreateBankComponent
+    CreateBankComponent,
+    VehicleDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -2,27 +2,92 @@
     <form [formGroup]="vehicleForm">
         <div class="mb-3 mt-3">
             <label for="vehicle" class="form-label">Vehicle:</label>
-            <input type="text" class="form-control" id="vehicle" placeholder="Enter Vehicle Name" formControlName="Vehicle">
+            <input type="text" class="form-control" id="vehicle" placeholder="Enter Vehicle Name"
+                formControlName="Vehicle">
+                <div class="text-danger" *ngIf="vehicleForm.get('Vehicle')?.touched && vehicleForm.get('Vehicle')?.invalid">
+                    <p *ngIf="vehicleForm.get('Vehicle')?.errors?.['required']">Vehicle name required</p>
+                    <p *ngIf="vehicleForm.get('Vehicle')?.errors?.['minlength']">Vehicle name should contain atleast 3 letters</p>
+                </div>
         </div>
         <div class="mb-3 mt-3">
             <label class="form-label">Manufacturer:</label>
-            <input type="text" class="form-control" id="manu" placeholder="Enter Manufacturer Name" formControlName="manufacturer">
+            <input type="text" class="form-control" id="manu" placeholder="Enter Manufacturer Name"
+                formControlName="manufacturer">
         </div>
         <div class="mb-3 mt-3">
             <label class="form-label">Model:</label>
             <input type="text" class="form-control" id="model" placeholder="Enter Model Name" formControlName="model">
         </div>
-        <div class="mb-3 mt-3">
-            <label class="form-label">Type:</label>
-            <input type="text" class="form-control" id="type" placeholder="Enter Type" formControlName="type">
+        <div formGroupName="addDetails">
+            <div class="mb-3 mt-3">
+                <label class="form-label">Type:</label>
+                <input type="text" class="form-control" id="type" placeholder="Enter Type" formControlName="type">
+            </div>
+            <div class="text-danger" *ngIf="vehicleForm.get('addDetails')?.get('type')?.touched && vehicleForm.get('addDetails')?.get('type')?.invalid ">
+                <p *ngIf="vehicleForm.get('addDetails')?.get('type')?.errors?.['required']">Type is required</p>
+            </div>
+            <div class="mb-3 mt-3">
+                <label class="form-label">Fuel:</label>
+                <input type="text" class="form-control" id="fuel" placeholder="Enter Fuel Type" formControlName="fuel">
+            </div>
+            <div class="mb-3 mt-3">
+                <label class="form-label">Color:</label>
+                <input type="text" class="form-control" id="col" placeholder="Enter Color" formControlName="color">
+            </div>
+           
         </div>
-        <div class="mb-3 mt-3">
-            <label class="form-label">Fuel:</label>
-            <input type="text" class="form-control" id="fuel" placeholder="Enter Fuel Type" formControlName="fuel">
+        <div>
+            <label>Engine Type:</label>
+            <input type="radio" name="type" formControlName="type" value="ice" style="width: 30px;">
+            <label>ICE Engine</label>
+            <input type="radio" name="type" formControlName="type" value="hybrid" style="width: 30px;">
+            <label>Hybrid Engine</label>
+            <br>
+            <div *ngIf="vehicleForm.get('type')?.value=='ice'"  class="mb-3 mt-3">
+                <label class="form-label">ICE Engine Amount:</label>
+                <input type="number" class="form-control" formControlName="ice">
+                <br>
+            </div>
+            <div *ngIf="vehicleForm.get('type')?.value=='hybrid'"  class="mb-3 mt-3">
+                <label class="form-label">Hybrid Engine Amount:</label>
+                <input type="number" class="form-control" formControlName="hybrid">
+                <br>
+            </div>
         </div>
-        <div class="mb-3 mt-3">
-            <label class="form-label">Color:</label>
-            <input type="text" class="form-control" id="col" placeholder="Enter Color" formControlName="color">
+        <div class="text-center">
+            <button (click)="addCard()" class="btn btn-success">Add Card</button>
+        </div>
+        <div formArrayName="cards">
+            <div *ngFor="let card of cardsFormArray.controls;let i=index">
+                <div formGroupName="{{i}}">
+                    <div class="mb-3 mt-3">
+                        <label class="form-label">Card Number:</label>
+                        <input type="number" class="form-control" formControlName="no">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label class="form-label">Expiry:</label>
+                        <input type="number" class="form-control" formControlName="exp">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label class="form-label">CVV:</label>
+                        <input type="number" class="form-control" formControlName="cvv">
+                    </div>
+                    <div class="text-danger" *ngIf="cardsFormArray.controls[i]?.get('cvv')?.touched && cardsFormArray.controls[i]?.get('cvv')?.invalid">
+                        <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['required']">CVV Required</p>
+                        <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['min']">CVV wrong</p>
+                        <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['max']">CVV atmost be 999</p>
+                        <!-- <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['minlength']">CVV must be atleast 3 digit</p> -->
+                    </div>
+                    <div class="text-center">
+                        <button (click)="deleteCard(i)" class="btn btn-danger">Delete Card</button>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
         </div>
         <div>
             <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
